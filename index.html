@@ -23,7 +23,7 @@
 				<!-- Main -->
 					<section id="main">
 						<header>
-							<span class="avatar"><img src="//avatars2.githubusercontent.com/u/13513906" alt="" /></span>
+							<span class="avatar"><img src="http://avatars2.githubusercontent.com/u/13513906" alt="" /></span>
 							<h1><a href="http://www.dingstudio.cn">David Ding</a></h1>
 							<p><a href="http://blog.dingstudio.cn">A computer developer</a></p>
 						</header>
@@ -66,9 +66,10 @@
 						-->
 						<footer>
 							<ul class="icons">
-								<li><a href="#" class="fa-twitter">Twitter</a></li>
-								<li><a href="#" class="fa-instagram">Instagram</a></li>
-								<li><a href="#" class="fa-facebook">Facebook</a></li>
+								<li><a href="https://twitter.com/_DavidDing" class="fa-twitter">Twitter</a></li>
+								<li><a href="https://www.facebook.com/DingCloud" class="fa-facebook">Facebook</a></li>
+								<li><a href="https://weibo.com/ddawx123" class="fa-weibo">Weibo</a></li>
+								<li><a href="http://wpa.qq.com/msgrd?v=3&uin=954759397&site=qq&menu=yes" class="fa-qq">QQ</a></li>
 							</ul>
 						</footer>
 					</section>
@@ -76,7 +77,7 @@
 				<!-- Footer -->
 					<footer id="footer">
 						<ul class="copyright">
-							<li>&copy; 2017 DingStudio</li><li>Design: <a href="http://www.dingstudio.cn">DingStudio</a></li>
+							<li>&copy; 2017 DingStudio</li><li>Design: <a href="http://www.dingstudio.cn">DingStudio</a> <span id="login_status">正在获取登录态</span></li>
 						</ul>
 					</footer>
 
@@ -89,6 +90,52 @@
 					window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-loading\b/, ''); });
 					document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
 				}
+				var xhr;
+    			if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+    			    xhr = new XMLHttpRequest();
+    			}
+    			else {// code for IE6, IE5
+    			    xhr = new ActiveXObject("Microsoft.XMLHTTP");
+    			}
+    			xhr.onreadystatechange = function () {
+    			    if (xhr.readyState == 4 && xhr.status == 200) {
+    			        var authdata = xhr.responseXML;
+    			        var authcode = authdata.getElementsByTagName("authcode")[0].firstChild.nodeValue;
+    			        //alert(authcode);
+    			        if (authcode == '0') {
+    			            document.getElementById("login_status").innerHTML = '<a href="https://passport.dingstudio.cn/sso/login?returnUrl=' + encodeURIComponent(window.location.href) + '" target="_self">登录</a>';
+    			        }
+    			        else {
+    			            var token = authdata.getElementsByTagName("token")[0].firstChild.nodeValue;//Get User Token
+    			            var xhr2;
+    			            if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+    			                xhr2 = new XMLHttpRequest();
+    			            }
+    			            else {// code for IE6, IE5
+    			                xhr2 = new ActiveXObject("Microsoft.XMLHTTP");
+    			            }
+    			            xhr2.onreadystatechange = function () {
+    			                if (xhr2.readyState == 4 && xhr2.status == 200) {
+    			                    var userinfo = xhr2.responseXML;
+    			                    var resultcode = userinfo.getElementsByTagName("code")[0].firstChild.nodeValue;
+    			                    if (resultcode == 200) {
+    			                        //var userdata = userinfo.getElementsByTagName("data")[0];
+										var username = userinfo.getElementsByTagName("data")[0].getElementsByTagName("username")[0].firstChild.nodeValue;
+										document.getElementById("login_status").innerHTML = '您已作为：<a href="https://passport.dingstudio.cn/sso/usercenter.php?ref=portalindex" target="_blank">' + username + '</a> 登录，<a href="https://passport.dingstudio.cn/sso/login.php?action=dologout&url=' + encodeURIComponent(window.location.href) + '" target="_self" title="退出网站通行证登录状态">点此</a>退出。';
+    			                    }
+    			                }
+    			            }
+    			            xhr2.withCredentials = true;
+    			            xhr2.open("POST", "https://passport.dingstudio.cn/sso/api?format=xml&action=verify", true);
+    			            xhr2.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    			            xhr2.send('token=' + token + '&reqtime=' + Date.parse(new Date()) / 1000 + '&cors_domain=' + window.location.protocol + '//' + window.location.host);
+    			        }
+    			    }
+    			}
+    			xhr.withCredentials = true;
+    			xhr.open("POST", "https://passport.dingstudio.cn/sso/api?format=xml&action=status", true);
+    			xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    			xhr.send('cors_domain=' + window.location.protocol + '//' + window.location.host);
 			</script>
 
 	</body>
