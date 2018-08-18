@@ -92,16 +92,16 @@
 					window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-loading\b/, ''); });
 					document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
 				}
-				var xhr;
+				var xhr2;
     			if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
-    			    xhr = new XMLHttpRequest();
+    			    xhr2 = new XMLHttpRequest();
     			}
     			else {// code for IE6, IE5
-    			    xhr = new ActiveXObject("Microsoft.XMLHTTP");
+    			    xhr2 = new ActiveXObject("Microsoft.XMLHTTP");
     			}
-    			xhr.onreadystatechange = function () {
-    			    if (xhr.readyState == 4 && xhr.status == 200) {
-    			        var authdata = xhr.responseXML;
+    			xhr2.onreadystatechange = function () {
+    			    if (xhr2.readyState == 4 && xhr2.status == 200) {
+    			        var authdata = xhr2.responseXML;
     			        var authcode = authdata.getElementsByTagName("authcode")[0].firstChild.nodeValue;
     			        //alert(authcode);
     			        if (authcode == '0') {
@@ -109,16 +109,16 @@
     			        }
     			        else {
     			            var token = authdata.getElementsByTagName("token")[0].firstChild.nodeValue;//Get User Token
-    			            var xhr2;
+    			            var xhr3;
     			            if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
-    			                xhr2 = new XMLHttpRequest();
+    			                xhr3 = new XMLHttpRequest();
     			            }
     			            else {// code for IE6, IE5
-    			                xhr2 = new ActiveXObject("Microsoft.XMLHTTP");
+    			                xhr3 = new ActiveXObject("Microsoft.XMLHTTP");
     			            }
-    			            xhr2.onreadystatechange = function () {
-    			                if (xhr2.readyState == 4 && xhr2.status == 200) {
-    			                    var userinfo = xhr2.responseXML;
+    			            xhr3.onreadystatechange = function () {
+    			                if (xhr3.readyState == 4 && xhr3.status == 200) {
+    			                    var userinfo = xhr3.responseXML;
     			                    var resultcode = userinfo.getElementsByTagName("code")[0].firstChild.nodeValue;
     			                    if (resultcode == 200) {
     			                        //var userdata = userinfo.getElementsByTagName("data")[0];
@@ -127,17 +127,17 @@
     			                    }
     			                }
     			            }
-    			            xhr2.withCredentials = true;
-    			            xhr2.open("POST", "https://passport.dingstudio.cn/sso/api?format=xml&action=verify", true);
-    			            xhr2.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    			            xhr2.send('token=' + token + '&reqtime=' + Date.parse(new Date()) / 1000 + '&cors_domain=' + window.location.protocol + '//' + window.location.host);
+    			            xhr3.withCredentials = true;
+    			            xhr3.open("POST", "https://passport.dingstudio.cn/sso/api?format=xml&action=verify", true);
+    			            xhr3.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    			            xhr3.send('token=' + token + '&reqtime=' + Date.parse(new Date()) / 1000 + '&cors_domain=' + window.location.protocol + '//' + window.location.host);
     			        }
     			    }
     			}
-    			xhr.withCredentials = true;
-    			xhr.open("POST", "https://passport.dingstudio.cn/sso/api?format=xml&action=status", true);
-    			xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    			xhr.send('cors_domain=' + window.location.protocol + '//' + window.location.host);
+    			xhr2.withCredentials = true;
+    			xhr2.open("POST", "https://passport.dingstudio.cn/sso/api?format=xml&action=status", true);
+    			xhr2.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    			xhr2.send('cors_domain=' + window.location.protocol + '//' + window.location.host);
 			</script>
 			<!-- DingStudio Background Music Api -->
 			<script src="http://www.dingstudio.cn/assets/js/dynamic-bgm.js" type="text/javascript"></script>
