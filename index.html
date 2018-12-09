@@ -5,141 +5,113 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-		<title>Identity by DingStudio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-loading">
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+    <head>
+        <title>Identity by DingStudio</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!--[if lte IE 8]><script src="assets/js/html5shiv.js"></script><![endif]-->
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+        <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+        <noscript>
+            <link rel="stylesheet" href="assets/css/noscript.css" />
+        </noscript>
+    </head>
 
-				<!-- Main -->
-					<section id="main">
-						<header>
-							<span class="avatar"><img src="//avatars2.githubusercontent.com/u/13513906" alt="" /></span>
-							<h1><a href="http://www.dingstudio.cn">David Ding</a></h1>
-							<p><a href="http://blog.dingstudio.cn">A computer developer</a></p>
-						</header>
-						<!--
-						<hr />
-						<h2>Extra Stuff!</h2>
-						<form method="post" action="#">
-							<div class="field">
-								<input type="text" name="name" id="name" placeholder="Name" />
-							</div>
-							<div class="field">
-								<input type="email" name="email" id="email" placeholder="Email" />
-							</div>
-							<div class="field">
-								<div class="select-wrapper">
-									<select name="department" id="department">
-										<option value="">Department</option>
-										<option value="sales">Sales</option>
-										<option value="tech">Tech Support</option>
-										<option value="null">/dev/null</option>
-									</select>
-								</div>
-							</div>
-							<div class="field">
-								<textarea name="message" id="message" placeholder="Message" rows="4"></textarea>
-							</div>
-							<div class="field">
-								<input type="checkbox" id="human" name="human" /><label for="human">I'm a human</label>
-							</div>
-							<div class="field">
-								<label>But are you a robot?</label>
-								<input type="radio" id="robot_yes" name="robot" /><label for="robot_yes">Yes</label>
-								<input type="radio" id="robot_no" name="robot" /><label for="robot_no">No</label>
-							</div>
-							<ul class="actions">
-								<li><a href="#" class="button">Get Started</a></li>
-							</ul>
-						</form>
-						<hr />
-						-->
-						<footer>
-							<ul class="icons">
-								<li><a href="https://twitter.com/_DavidDing" class="fa-twitter">Twitter</a></li>
-								<li><a href="https://www.facebook.com/DingCloud" class="fa-facebook">Facebook</a></li>
-								<li><a href="https://weibo.com/ddawx123" class="fa-weibo">Weibo</a></li>
-								<li><a href="http://wpa.qq.com/msgrd?v=3&uin=954759397&site=qq&menu=yes" class="fa-qq">QQ</a></li>
-							</ul>
-						</footer>
-					</section>
+    <body class="is-loading">
 
-				<!-- Footer -->
-					<footer id="footer">
-						<ul class="copyright">
-							<li>&copy; 2012-<script>document.write(new Date().getFullYear());</script> DingStudio</li><li>Design: <a href="http://www.dingstudio.cn">DingStudio</a> <span id="login_status">正在获取登录态</span></li>
-						</ul>
-					</footer>
+        <!-- Wrapper -->
+        <div id="wrapper">
 
-			</div>
-			<!-- Background Music Container -->
-			<div id="bgmusic" align="center" style="display: none"></div>
+            <!-- Main -->
+            <section id="main">
+                <header>
+                    <span class="avatar"><img src="//avatars2.githubusercontent.com/u/13513906" alt="" /></span>
+                    <h1><a href="http://www.dingstudio.cn">David Ding</a></h1>
+                    <p><a href="http://blog.dingstudio.cn">A computer developer</a></p>
+                </header>
+                <footer>
+                    <ul class="icons">
+                        <li><a href="https://twitter.com/_DavidDing" class="fa-twitter">Twitter</a></li>
+                        <li><a href="https://www.facebook.com/DingCloud" class="fa-facebook">Facebook</a></li>
+                        <li><a href="https://weibo.com/ddawx123" class="fa-weibo">Weibo</a></li>
+                        <li><a href="http://wpa.qq.com/msgrd?v=3&uin=954759397&site=qq&menu=yes" class="fa-qq">QQ</a></li>
+                    </ul>
+                </footer>
+            </section>
 
-		<!-- Scripts -->
-			<!--[if lte IE 8]><script src="assets/js/respond.min.js"></script><![endif]-->
-			<script>
-				if ('addEventListener' in window) {
-					window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-loading\b/, ''); });
-					document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
-				}
-				var xhr2;
-    			if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
-    			    xhr2 = new XMLHttpRequest();
-    			}
-    			else {// code for IE6, IE5
-    			    xhr2 = new ActiveXObject("Microsoft.XMLHTTP");
-    			}
-    			xhr2.onreadystatechange = function () {
-    			    if (xhr2.readyState == 4 && xhr2.status == 200) {
-    			        var authdata = xhr2.responseXML;
-    			        var authcode = authdata.getElementsByTagName("authcode")[0].firstChild.nodeValue;
-    			        //alert(authcode);
-    			        if (authcode == '0') {
-    			            document.getElementById("login_status").innerHTML = '<a href="https://passport.dingstudio.cn/sso/login?returnUrl=' + encodeURIComponent(window.location.href) + '" target="_self">登录</a>';
-    			        }
-    			        else {
-    			            var token = authdata.getElementsByTagName("token")[0].firstChild.nodeValue;//Get User Token
-    			            var xhr3;
-    			            if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
-    			                xhr3 = new XMLHttpRequest();
-    			            }
-    			            else {// code for IE6, IE5
-    			                xhr3 = new ActiveXObject("Microsoft.XMLHTTP");
-    			            }
-    			            xhr3.onreadystatechange = function () {
-    			                if (xhr3.readyState == 4 && xhr3.status == 200) {
-    			                    var userinfo = xhr3.responseXML;
-    			                    var resultcode = userinfo.getElementsByTagName("code")[0].firstChild.nodeValue;
-    			                    if (resultcode == 200) {
-    			                        //var userdata = userinfo.getElementsByTagName("data")[0];
-										var username = userinfo.getElementsByTagName("data")[0].getElementsByTagName("username")[0].firstChild.nodeValue;
-										document.getElementById("login_status").innerHTML = '您已作为：<a href="https://passport.dingstudio.cn/sso/usercenter.php?ref=portalindex" target="_blank">' + username + '</a> 登录，<a href="https://passport.dingstudio.cn/sso/login.php?action=dologout&url=' + encodeURIComponent(window.location.href) + '" target="_self" title="退出网站通行证登录状态">点此</a>退出。';
-    			                    }
-    			                }
-    			            }
-    			            xhr3.withCredentials = true;
-    			            xhr3.open("POST", "https://passport.dingstudio.cn/sso/api?format=xml&action=verify", true);
-    			            xhr3.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    			            xhr3.send('token=' + token + '&reqtime=' + Date.parse(new Date()) / 1000 + '&cors_domain=' + window.location.protocol + '//' + window.location.host);
-    			        }
-    			    }
-    			}
-    			xhr2.withCredentials = true;
-    			xhr2.open("POST", "https://passport.dingstudio.cn/sso/api?format=xml&action=status", true);
-    			xhr2.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    			xhr2.send('cors_domain=' + window.location.protocol + '//' + window.location.host);
-			</script>
-			<!-- DingStudio Background Music Api -->
-			<script src="http://www.dingstudio.cn/assets/js/dynamic-bgm.js" type="text/javascript"></script>
-	</body>
+            <!-- Footer -->
+            <footer id="footer">
+                <ul class="copyright">
+                    <li>&copy; 2012-
+                        <script>document.write(new Date().getFullYear());</script> DingStudio</li>
+                    <li>Design: <a href="http://www.dingstudio.cn">DingStudio</a> <span id="login_status">正在获取登录态</span></li>
+                </ul>
+            </footer>
+
+        </div>
+        <!-- Background Music Container -->
+        <div id="bgmusic" align="center" style="display: none"></div>
+
+        <!-- Scripts -->
+        <!--[if lte IE 8]><script src="assets/js/respond.min.js"></script><![endif]-->
+        <script>
+            if ('addEventListener' in window) {
+                window.addEventListener('load', function () { document.body.className = document.body.className.replace(/\bis-loading\b/, ''); });
+                document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
+            }
+            var xhr2;
+            if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+                xhr2 = new XMLHttpRequest();
+            }
+            else {// code for IE6, IE5
+                xhr2 = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xhr2.onreadystatechange = function () {
+                if (xhr2.readyState == 4 && xhr2.status == 200) {
+                    var authdata = xhr2.responseXML;
+                    var authcode = authdata.getElementsByTagName("authcode")[0].firstChild.nodeValue;
+                    //alert(authcode);
+                    if (authcode == '0') {
+                        document.getElementById("login_status").innerHTML = '<a href="https://passport.dingstudio.cn/sso/login?returnUrl=' + encodeURIComponent(window.location.href) + '" target="_self">登录</a>';
+                    }
+                    else {
+                        var token = authdata.getElementsByTagName("token")[0].firstChild.nodeValue;//Get User Token
+                        var xhr3;
+                        if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+                            xhr3 = new XMLHttpRequest();
+                        }
+                        else {// code for IE6, IE5
+                            xhr3 = new ActiveXObject("Microsoft.XMLHTTP");
+                        }
+                        xhr3.onreadystatechange = function () {
+                            if (xhr3.readyState == 4 && xhr3.status == 200) {
+                                var userinfo = xhr3.responseXML;
+                                var resultcode = userinfo.getElementsByTagName("code")[0].firstChild.nodeValue;
+                                if (resultcode == 200) {
+                                    //var userdata = userinfo.getElementsByTagName("data")[0];
+                                    var username = userinfo.getElementsByTagName("data")[0].getElementsByTagName("username")[0].firstChild.nodeValue;
+                                    document.getElementById("login_status").innerHTML = '您已作为：<a href="https://passport.dingstudio.cn/sso/usercenter.php?ref=portalindex" target="_blank">' + username + '</a> 登录，<a href="https://passport.dingstudio.cn/sso/login.php?action=dologout&url=' + encodeURIComponent(window.location.href) + '" target="_self" title="退出网站通行证登录状态">点此</a>退出。';
+                                }
+                            }
+                        }
+                        xhr3.withCredentials = true;
+                        xhr3.open("POST", "https://passport.dingstudio.cn/sso/api?format=xml&action=verify", true);
+                        xhr3.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                        xhr3.send('token=' + token + '&reqtime=' + Date.parse(new Date()) / 1000 + '&cors_domain=' + window.location.protocol + '//' + window.location.host);
+                    }
+                }
+            }
+            xhr2.withCredentials = true;
+            xhr2.open("POST", "https://passport.dingstudio.cn/sso/api?format=xml&action=status", true);
+            xhr2.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhr2.send('cors_domain=' + window.location.protocol + '//' + window.location.host);
+        </script>
+        <!-- DingStudio Background Music Api -->
+        <script src="http://www.dingstudio.cn/assets/js/dynamic-bgm.js" type="text/javascript"></script>
+        <!-- Global Site Advertisement Include By JS -->
+        <script src="alipay_redbag.js" type="text/javascript"></script>
+    </body>
+
 </html>
