@@ -39,7 +39,7 @@ function createDialog() {
     var alipay_redbag_ad = document.createElement('div');
     alipay_redbag_ad.id = 'alipay_redbag_ad';
     alipay_redbag_ad.style.display = 'block';
-    alipay_redbag_ad.style.position = 'absolute';
+    alipay_redbag_ad.style.position = 'fixed';
     alipay_redbag_ad.style.right = '0px';
     alipay_redbag_ad.style.bottom = '0px';
     alipay_redbag_ad.style.zIndex = '99999';
@@ -50,7 +50,7 @@ function createDialog() {
     alipay_redbag_ad.innerHTML += '</div>\n';
     
     alipay_redbag_ad.innerHTML += '<div align="center" style="width:100%; height:100%; background: #A1C2E5; z-index:99999">\n';
-    alipay_redbag_ad.innerHTML += '<img src="https://static2.dingstudio.cn/images/ad/1544337377187.jpg" height="350"></img>\n';
+    alipay_redbag_ad.innerHTML += '<img src="https://static2.dingstudio.cn/images/ad/1544337377187.jpg" height="250"></img>\n';
     alipay_redbag_ad.innerHTML += '</div>\n';
     document.body.appendChild(alipay_redbag_ad);
 }
