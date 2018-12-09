@@ -1,10 +1,14 @@
 // JavaScript 支付宝红包浮动推送
 
 var CookieMgr = {
-    set: function (key, value, expires = '', domain = '', path = '', secure = false) {
+    set: function (key, value, expires = 0, domain = '', path = '', secure = false) {
         var cookieString = '';
         cookieString += encodeURIComponent(key) + '=' + encodeURIComponent(value);
-        if (expires instanceof Date) cookieString += '; expires=' + expires.toGMTString();
+        if (expires != 0) {
+            var d = new Date();
+            d.setTime(d.getTime + (expires * 24 * 60 * 60 * 1000));
+            cookieString += '; expires=' + d.toGMTString();
+        }
         if (path != '') cookieString += '; path=' + path;
         if (domain != '') cookieString += '; domain=' + domain;
         if (secure) cookieString += '; secure';
@@ -28,7 +32,7 @@ var CookieMgr = {
 
 function hideDialog() {
     document.getElementById('alipay_redbag_ad').style.display = 'none';
-    CookieMgr.set('ad_clickonce', new Date().toLocaleString, Math.floor((new Date()).getTime() / 1000) + 7200, window.location.hostname, '/', false);
+    CookieMgr.set('ad_clickonce', new Date().toLocaleString(), 3, window.location.hostname, '/', false);
 }
 
 function createDialog() {
