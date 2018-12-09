@@ -38,6 +38,7 @@ function createDialog() {
     alipay_redbag_ad.style.position = 'absolute';
     alipay_redbag_ad.style.right = '0px';
     alipay_redbag_ad.style.bottom = '0px';
+    alipay_redbag_ad.style.zIndex = '99999';
     
     alipay_redbag_ad.innerHTML += '<div id="divdlgTitle" style="width:100%; hight: 40px; background: #A1C2E5; padding: 5 5 5 5; z-index:99999">\n';
     alipay_redbag_ad.innerHTML += '<span style="float:left" id="dlgTitle">扫码领取支付宝红包</span>\n';
