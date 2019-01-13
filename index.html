@@ -75,7 +75,7 @@
                     var authcode = authdata.getElementsByTagName("authcode")[0].firstChild.nodeValue;
                     //alert(authcode);
                     if (authcode == '0') {
-                        document.getElementById("login_status").innerHTML = '<a href="https://passport.dingstudio.cn/sso/login?returnUrl=' + encodeURIComponent(window.location.href) + '" target="_self">登录</a>';
+                        document.getElementById("login_status").innerHTML = '<a href="https://passport.dingstudio.cn/sso/login?returnUrl=' + btoa(encodeURIComponent(window.location.href)) + '" target="_self">登录</a>';
                     }
                     else {
                         var token = authdata.getElementsByTagName("token")[0].firstChild.nodeValue;//Get User Token
